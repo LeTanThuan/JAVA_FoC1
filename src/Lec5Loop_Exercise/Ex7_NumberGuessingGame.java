@@ -15,7 +15,7 @@ public class Ex7_NumberGuessingGame {
             number = scanner.nextInt();
             if (number > randomNumber) {
                 System.out.println("Your number is higher than the secret number!");
-            }else if (number < randomNumber) {
+            } else if (number < randomNumber) {
                 System.out.println("Your number is lower than the secret number!");
             } else {
                 System.out.println("Congratulations! You guessed correctly!");
