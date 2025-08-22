@@ -23,8 +23,8 @@ public static void DrawTriangle(int h){
 
     public static void main(String[] args){
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter High Triangle: ");
-        int high = scanner.nextInt();
-        DrawTriangle(high);
+        System.out.print("Enter Height Triangle: ");
+        int height = scanner.nextInt();
+        DrawTriangle(height);
     }
 }

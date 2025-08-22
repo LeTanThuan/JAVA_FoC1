@@ -21,7 +21,7 @@ public class Ex12_PrimeNumberCheck {
         }else if(a==1){
             System.out.println(number+" is Prime Number");
         }else{
-            System.out.println("Errol");
+            System.out.println("Errol!");
         }
         
     }
