@@ -9,7 +9,7 @@ public class Processor {
         BookList bookList = new BookList();
         int choice;
 
-        do {
+        do{
             System.out.println("\n===== BOOK MANAGEMENT MENU =====");
             System.out.println("1. Add new TextBook");
             System.out.println("2. Add new ReferenceBook");
@@ -22,36 +22,17 @@ public class Processor {
             System.out.println("0. Exit");
             System.out.print("Choose an option: ");
             choice = scanner.nextInt();
-            scanner.nextLine(); 
+            scanner.nextLine();
 
             switch (choice) {
                 case 1 -> {
-                    System.out.print("Enter ID: ");
-                    String id = scanner.nextLine();
-                    System.out.print("Enter Title: ");
-                    String title = scanner.nextLine();
-                    System.out.print("Enter Base Price: ");
-                    double price = scanner.nextDouble();
-                    scanner.nextLine();
-                    System.out.print("Enter Subject: ");
-                    String subject = scanner.nextLine();
+                    new TextBook().addBook();
 
-                    TextBook textBook = new TextBook(id, title, price, subject);
-                    bookList.addBook(textBook);
                 }
                 case 2 -> {
-                    System.out.print("Enter ID: ");
-                    String id = scanner.nextLine();
-                    System.out.print("Enter Title: ");
-                    String title = scanner.nextLine();
-                    System.out.print("Enter Base Price: ");
-                    double price = scanner.nextDouble();
-                    scanner.nextLine();
-                    System.out.print("Enter Publisher: ");
-                    String publisher = scanner.nextLine();
 
-                    ReferenceBook refBook = new ReferenceBook(id, title, price, publisher);
-                    bookList.addBook(refBook);
+                    new ReferenceBook().addBook();
+
                 }
 
                 case 3 -> {
@@ -78,7 +59,7 @@ public class Processor {
                 }
 
                 case 6 ->
-                    bookList.displayAllBooks();
+                    BookList.displayAllBooks();
 
                 case 7 ->
                     bookList.findMostExpensiveBook();

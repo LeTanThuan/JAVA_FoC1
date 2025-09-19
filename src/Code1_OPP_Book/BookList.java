@@ -1,46 +1,54 @@
-
 package Code1_OPP_Book;
 
 import java.util.ArrayList;
 
 public class BookList {
-    ArrayList <Book>  bookList = new ArrayList <>();
+
+    public static ArrayList<Book> bookList = new ArrayList<>();
     //Scanner scanner = new Scanner(System.in);
 
     public BookList() {
     }
-    
-    public void addBook(Book book){
+
+    public static void addBook(Book book ) {
+
         bookList.add(book);
+
         System.out.println("Added");
-         
+
     }
-    public boolean updateBookById(String id){
+    public static ArrayList<Book> getBooks() {
+        return bookList;
+    }
+
+
+    public boolean updateBookById(String id) {
         for (Book book : bookList) {
             if (book.getId().equals(id)) {
                 book.updateBookByld(id);
                 return true;
             }
         }
-         System.out.println("Not found ID: " + id);
-         return false;
+        System.out.println("Not found ID: " + id);
+        return false;
     }
-    public boolean deleteBookById(String id){
-         for (Book object : bookList) {
-            if (id.equals(object.getId())) { 
+
+    public boolean deleteBookById(String id) {
+        for (Book object : bookList) {
+            if (id.equals(object.getId())) {
                 bookList.remove(object);
-                 System.out.println("Deleted ID: " + id);
-                 return true;
+                System.out.println("Deleted ID: " + id);
+                return true;
             } else {
                 System.out.println("Not found ID: " + id);
-                
+
             }
         }
-         return false;
+        return false;
     }
-    
-    public Book  findBookById(String id){
-         for (Book book : bookList) {
+
+    public Book findBookById(String id) {
+        for (Book book : bookList) {
             if (book.getId().equals(id)) {
                 return book;
             }
@@ -48,7 +56,8 @@ public class BookList {
         System.out.println("Not found ID: " + id);
         return null;
     }
-    public void displayAllBooks(){
+
+    public static void displayAllBooks() {
         if (bookList.isEmpty()) {
             System.out.println("Empty");
         } else {
@@ -57,6 +66,7 @@ public class BookList {
             }
         }
     }
+
     public Book findMostExpensiveBook() {
         if (bookList.isEmpty()) {
             System.out.println("Empty");

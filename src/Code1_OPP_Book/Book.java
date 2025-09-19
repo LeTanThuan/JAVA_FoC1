@@ -1,11 +1,13 @@
 
 package Code1_OPP_Book;
 
+import java.util.Scanner;
+
 
 public abstract class Book {
     private String id;
     private String title;
-    double basePrice;
+    private double basePrice;
     //contructor
 
     public Book() {
@@ -42,18 +44,28 @@ public abstract class Book {
         this.basePrice = basePrice;
     }
     
-    public void addBook(Book book){
-        
+    public void addBook(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter ID: ");
+        setId(scanner.nextLine());
+        System.out.print("Enter Title: ");
+        setTitle(scanner.nextLine());
+        System.out.print("Enter Base Price: ");
+        setBasePrice(scanner.nextDouble());
+        scanner.nextLine();
     }
     public boolean updateBookByld(String id){
         return false;
     }
     
+    
+
     public void displayDetails(){
         System.out.println("Book ID: " + id);
         System.out.println("Title: " + title);
         System.out.println("Base Price: " + basePrice);
     }
+
     public abstract double calculatePrice();
     
     

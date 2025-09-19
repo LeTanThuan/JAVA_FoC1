@@ -1,5 +1,7 @@
 package Code1_OPP_Book;
 
+import java.util.Scanner;
+
 public class ReferenceBook extends Book {
 
     private String publisher;
@@ -7,7 +9,7 @@ public class ReferenceBook extends Book {
     public ReferenceBook() {
     }
 
-    public ReferenceBook( String id, String tille, double basePrice, String publisher) {
+    public ReferenceBook(String id, String tille, double basePrice, String publisher) {
         super(id, tille, basePrice);
         this.publisher = publisher;
     }
@@ -21,21 +23,24 @@ public class ReferenceBook extends Book {
     }
 
     @Override
-    public double getBasePrice() {
-        return basePrice;
+    public void addBook() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter ID: ");
+        setId(scanner.nextLine());
+        System.out.print("Enter Title: ");
+        setTitle(scanner.nextLine());
+        System.out.print("Enter Base Price: ");
+        setBasePrice(scanner.nextDouble());
+        scanner.nextLine();
+        System.out.print("Enter Publisher: ");
+        publisher = scanner.nextLine();
+
+        BookList.addBook(this); 
+        System.out.println("✅ ReferenceBook added.");
     }
 
-    @Override
-    public void setBasePrice(double basePrice) {
-        this.basePrice = basePrice;
-    }
 
-    @Override
-    public void addBook(Book book) {
 
-    }
-
-    
     public boolean updateBookById(String id) {
         return false;
     }

@@ -1,5 +1,7 @@
 package Code1_OPP_Book;
 
+import java.util.Scanner;
+
 public class TextBook extends Book {
 
     private String subject;
@@ -11,7 +13,7 @@ public class TextBook extends Book {
         this.subject = subject;
     }
 
-    public TextBook( String id, String tille, double basePrice,String subject) {
+    public TextBook(String id, String tille, double basePrice, String subject) {
         super(id, tille, basePrice);
         this.subject = subject;
     }
@@ -25,19 +27,18 @@ public class TextBook extends Book {
     }
 
     @Override
-    public double getBasePrice() {
-        return basePrice;
+    public void addBook() {
+        Scanner scanner = new Scanner(System.in);
+        super.addBook();
+        System.out.print("Enter Subject: ");
+        subject = scanner.nextLine();
+
+        BookList.addBook(this);
+        System.out.println("TextBook added.");
     }
 
-    @Override
-    public void setBasePrice(double basePrice) {
-        this.basePrice = basePrice;
-    }
 
-    @Override
-    public void addBook(Book book) {
 
-    }
 
     @Override
     public boolean updateBookByld(String id) {
@@ -57,5 +58,7 @@ public class TextBook extends Book {
         return getBasePrice() * 0.1;
 
     }
+
+    
 
 }
